@@ -13,12 +13,30 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   dio: ^4.0.0
+  get_it: ^7.2.0
+
+  domain:
+    path: ./packages/domain
+
+  infra:
+    path: ./packages/infra
+
+  core:
+    path: ./packages/core
+
+  data:
+    path: ./packages/data
+
+  presentation:
+    path: ./packages/presentation
   
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   pedantic: ^1.11.0
+  mocktail: ^0.2.0
+  test: ^1.17.10
 
 flutter:
   uses-material-design: true

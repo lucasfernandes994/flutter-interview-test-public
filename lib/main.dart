@@ -1,12 +1,14 @@
+import 'package:core/resources/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_interview_test/core/resources/themes.dart';
-import 'package:flutter_interview_test/presentation/character_list/character_list_view.dart';
+import 'package:presentation/character_list/character_list_view.dart';
+
+import 'module/module.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
-      .then((_) {
+  setupLocator();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then((_) {
     runApp(MyApp());
   });
 }
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
       title: 'Rick and Morty',
       navigatorKey: navigatorKey,
       theme: Themes.appTheme(context),
-      home: CharacterListView(),
+      home: locator.get<CharacterListView>(),
     );
   }
 }
